@@ -1,0 +1,36 @@
+.main-bg { /*Imagem como brackground  */
+    background-image: url('../img/main-bg.svg'); /*Adiciono a imagem como background no corpo do html*/ 
+    background-size: cover; /*Imagem se ajustará de acordo com o reposicionamento da janela*/
+    background-position: center center; /*Centralizo a imagem nos eixos x e y*/
+    color: var(--white-color);
+}
+
+.white-bg { /*Branco como Brackground*/
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
+.main-content {
+    max-width: 120rem; /*Largura máxima do site, 1200px*/
+    margin: 0 auto;
+    padding: 8rem var(--gap);
+}
+
+.gally-content {
+    max-width: 120rem; /*Largura máxima do site, 1200px*/
+    margin: 0 auto;
+    padding: 1rem var(--gap);
+}
+
+.section {
+    min-height: 100vh; /*Altura mínima*/
+}
+
+.menu-spacing {
+    height: 65px; /*Espaçamento do tamanho do menu para empurrar a section para baixo, e não deixar ela embaixo do menu*/
+}
+
+body .fall-width {
+    width: 100%;
+    flex: 1 1 100%;
+}

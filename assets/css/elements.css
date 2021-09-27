@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ html {
+    font-size: 62.5%; /*Se utilizar rem, devo multipiclar por x10 para ter a quantidade em px  Ex: 1.6rem = 16px*/
+    scroll-behavior: smooth; /*Transição de rolagem ao clicar em determinado link*/
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem; /*Equivale a 16px*/
+    color: var(--primary-color);
+    line-height: 1.5; /*Altura de uma linha para outra*/
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    font-size: 6rem; /*60px*/
+    text-transform: uppercase; /*Texto em Maiúsculo*/
+}
+
+h2{
+    font-size: 5.5rem; /*70px*/
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+h3{
+    font-size: 5rem; /*50px*/
+}
+
+h4{
+    font-size: 4.5rem; /*45px*/
+}
+
+h5{
+    font-size: 4rem; /*40px*/
+}
+
+h6{
+    font-size: 3.5rem; /*35px*/
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 3rem; /*Espaçamento inferior de 30px*/
+}
+
+table {
+    min-width: 36rem; /*360px*/
+    width: 100%;
+    border-collapse: collapse; /*Juntar as bordas*/
+}
+
+table td, table th { /*Linhas e Colunas*/
+    white-space: nowrap; /*NÃO quebrar o texto nas células da tabela*/
+    padding: 1rem; /*10px*/
+    text-align: left;
+    border: 0.1rem solid var(--light-gray-color);
+}
+
+tfoot td, table th {
+    background: var(--light-gray-color);
+}
+
+table caption {
+    font-style: italic;
+    font-size: 1.6rem; /*16px*/
+    text-align: left;
+    margin-bottom: 1rem; /*10px*/
+}
+
+.responsive-table {
+    overflow-x: auto;
+    overflow-y: auto;
+}

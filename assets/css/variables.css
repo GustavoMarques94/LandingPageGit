@@ -1,0 +1,9 @@
+/*Variáveis Globais*/
+:root {
+    --primary-color: #0B0F1E;
+    --white-color: #FFFFFF;
+    --light-gray-color: #EEEEEE; 
+    --secundary-color: crimson;
+    --placeholder-color: #BEC5E9;
+    --gap: 3rem; /*30px*/
+}

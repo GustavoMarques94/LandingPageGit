@@ -1,0 +1,308 @@
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+.intro-content {
+    position: relative;
+    top: -8rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh; /*altura mínima da section*/
+}
+
+.into-text-content, .intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.into-text-content h2{
+    margin-top: 10rem;
+}
+
+.intro-img img, .intro-img svg{
+    max-width: 95%; /*100% do elemento pai*/
+    height: auto;
+    margin-left: 10rem;
+}
+
+.top3-content {
+    max-width: 64rem; /*largura máxima de 640px*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; /*Não permite que a colune se quebre*/
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.grid-one-content {
+    min-height: 100vh;
+    flex-flow: column wrap;
+    justify-content: center;
+    display: flex;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter; /*Crio um contador na grid*/
+}
+
+.grid h3 {
+    font-size: 3rem; /*30px*/
+    position: relative; /*h3 vai ficar dentro da grip Grid*/
+    padding-left: 5rem; /*50px*/
+    padding-bottom: 3rem; /*30px*/  
+}
+
+.grid h3::before { /*Antes do título*/
+    counter-increment: grid-counter; /* Incremento no contador*/
+    content: counter(grid-counter); /*Fixo o contador na tela*/
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -3.5rem;
+    left: -1.5rem;
+    transform: rotate(5deg); /*Rotaciono o h3*/
+}
+
+.grid-main-heading{
+    margin-bottom: 1rem; /*10px*/
+}
+
+.grid-description {
+    padding-bottom: 8rem;
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem; /*largura máxima de 360px*/
+    max-height: 36rem; /*altura máxima de 360px*/
+    overflow: hidden; /*Imagem irá ficar com overflow oculto, não irá transbordar*/
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.contact-form {
+    grid-column: span 2; /*Aloco 2 espaços na 3° div da grid*/
+}
+
+.contact-form .form-grid {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap );
+}
+
+.form-grid legend {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    min-width: 32rem;
+    flex: 1 1 auto;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.form-group input, .form-group textarea {
+    border: none;
+    background: var(--white-color);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 3rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    box-shadow: 0 0 0.5rem 0.5rem var(--secundary-color) ;
+}
+
+.form-group button {
+    border: 0.5rem solid var(--white-color);
+    background: none;
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.form-group button:hover {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
+.form-group ::placeholder {
+    color: var(--placeholder-color);
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer a {
+    color: var(--secundary-color);
+}
+
+#footer p {
+    margin: 0;
+    padding: 3rem;
+}
+
+.close-menu {
+    display: none;
+}
+
+@media (max-width: 80rem){
+    .intro-content, .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%; 
+    }
+
+    .gallery-img img {
+        width : 100%;
+    }
+
+    .grid-one-content {
+        display: block;
+    }
+
+    .menu {
+        bottom: 0;
+        text-align: center;
+    }
+
+    .menu-content, .menu-content ul {
+        flex-direction: column;   
+        justify-content: center; 
+    }
+
+    .menu-content{
+        height: 100vh; /*Tamanho máximo*/
+    }
+
+    .menu {
+        display: none; /*Torna o menu invisível*/
+    }
+
+    .close-menu-label::after { /*pseudo elemento depois do label*/
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color); 
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer; /*Torna o cursor clicável*/
+    }
+
+    .close-menu:checked~.menu { /*Ao clicar no menu, o mesmo terá display block*/
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after { /*Quando abrir o menu, o ícone irá alterar para x*/
+        content: '×';
+    }
+
+    .menu-spacing {
+        display: none;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--white-color);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--primary-color);
+    border: 0.1rem solid var(--primary-color);
+}
+
+.gallery-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.8s ease-in;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media(max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
